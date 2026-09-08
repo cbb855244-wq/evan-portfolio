@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 980" role="img" aria-label="Spatial portfolio spread">
+  <rect width="1400" height="980" fill="#ffffff"/>
+  <rect x="74" y="78" width="1252" height="824" fill="#f1f0ec"/>
+  <rect x="130" y="134" width="594" height="348" fill="#bebdb7"/>
+  <rect x="776" y="134" width="416" height="348" fill="#dbdad5"/>
+  <rect x="130" y="560" width="310" height="236" fill="#d2d1cb"/>
+  <rect x="492" y="560" width="700" height="236" fill="#aaa9a3"/>
+  <g stroke="#111" stroke-opacity=".18" stroke-width="2" fill="none">
+    <path d="M130 522h1062M724 134v348M776 134v348M440 560v236M492 560v236"/>
+    <path d="M88 92h1224v796H88z"/>
+  </g>
+  <g fill="#111" fill-opacity=".22">
+    <rect x="1224" y="134" width="40" height="324"/>
+    <rect x="1224" y="560" width="40" height="236"/>
+  </g>
+</svg>

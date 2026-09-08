@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" role="img" aria-label="NIO House spatial study">
+  <rect width="1600" height="1060" fill="#e9e8e3"/>
+  <rect x="94" y="82" width="1412" height="896" fill="#f7f7f4"/>
+  <rect x="186" y="166" width="590" height="706" fill="#c8c7c0"/>
+  <rect x="834" y="166" width="480" height="324" fill="#d8d7d1"/>
+  <rect x="834" y="544" width="574" height="328" fill="#b8b7b1"/>
+  <path d="M186 872 776 166M834 490l480-324M834 872l574-328" stroke="#fff" stroke-width="8" opacity=".58"/>
+  <g fill="none" stroke="#111" stroke-opacity=".2" stroke-width="2">
+    <path d="M118 118h1364v824H118z"/>
+    <path d="M846 200h428v258H846z"/>
+    <path d="M874 584h492v248H874z"/>
+  </g>
+</svg>

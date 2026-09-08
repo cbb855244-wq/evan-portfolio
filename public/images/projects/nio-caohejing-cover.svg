@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 920" role="img" aria-label="NIO Caohejing office spatial study">
+  <rect width="1800" height="920" fill="#eeeeea"/>
+  <rect x="80" y="74" width="1640" height="772" fill="#f9f9f6"/>
+  <rect x="130" y="124" width="742" height="302" fill="#c4c3bd"/>
+  <rect x="928" y="124" width="742" height="302" fill="#deddd8"/>
+  <rect x="130" y="492" width="1540" height="304" fill="#b1b0aa"/>
+  <path d="M130 426h1540M872 124v302M928 124v302" stroke="#111" stroke-opacity=".14" stroke-width="2"/>
+  <path d="M130 796 872 124M928 426l742-302M130 492h1540" stroke="#fff" stroke-width="8" opacity=".55"/>
+</svg>
