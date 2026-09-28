@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { projects } from '@/src/data/projects';
 import { ContactInfo } from './contact-info';
+import { PortfolioIntroOverlay } from './portfolio-intro-overlay';
 
 const practiceItems = [
   {
@@ -121,32 +122,34 @@ export function HomePage() {
   const [activeProject, setActiveProject] = useState(projects[0]);
   const [previewVisible, setPreviewVisible] = useState(false);
   const reducedMotion = useReducedMotion();
-  const [playEntrance] = useState(() => {
-    if (typeof window === 'undefined') {
-      return false;
-    }
-
-    const navigation = performance.getEntriesByType(
-      'navigation',
-    )[0] as PerformanceNavigationTiming | undefined;
-    const isReload = navigation?.type === 'reload';
-
-    return !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
-      (isReload || sessionStorage.getItem(introKey) !== 'true');
-  });
+  const [playEntrance, setPlayEntrance] = useState(false);
   const activeProjectImage =
     homeImagesBySlug[activeProject.slug] ?? activeProject.coverImage;
 
   useEffect(() => {
-    if (!playEntrance || reducedMotion) {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+    const navigation = performance.getEntriesByType(
+      'navigation',
+    )[0] as PerformanceNavigationTiming | undefined;
+    const isReload = navigation?.type === 'reload';
+    const shouldPlayEntrance =
+      !prefersReducedMotion &&
+      (isReload || sessionStorage.getItem(introKey) !== 'true');
+
+    if (!shouldPlayEntrance) {
       return;
     }
 
     sessionStorage.setItem(introKey, 'true');
-  }, [playEntrance, reducedMotion]);
+    setPlayEntrance(true);
+  }, []);
 
   return (
     <main className="brutalist-home v2-home">
+      <PortfolioIntroOverlay active={playEntrance && !reducedMotion} />
+
       <header className="brutalist-nav v2-nav">
         <motion.a
           animate={{ opacity: 1, y: 0 }}
