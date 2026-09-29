@@ -6,8 +6,8 @@ type PortfolioIntroOverlayProps = {
   active: boolean;
 };
 
-const INTRO_REVEAL_MS = 2450;
-const INTRO_END_MS = 3300;
+const INTRO_REVEAL_MS = 2100;
+const INTRO_END_MS = 3200;
 const REDUCED_MOTION_END_MS = 420;
 
 const introImages = [
@@ -109,7 +109,9 @@ export function PortfolioIntroOverlay({ active }: PortfolioIntroOverlayProps) {
             alt={image.alt}
             className={`portfolio-intro-image portfolio-intro-image-${index + 1}`}
             decoding="async"
+            fetchPriority="high"
             key={image.src}
+            loading="eager"
             src={image.src}
           />
         ))}

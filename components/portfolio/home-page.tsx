@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { projects } from '@/src/data/projects';
 import { ContactInfo } from './contact-info';
 import { PortfolioIntroOverlay } from './portfolio-intro-overlay';
+import { PortfolioParallaxHero } from './portfolio-parallax-hero';
 
 const practiceItems = [
   {
@@ -186,84 +187,7 @@ export function HomePage() {
         </motion.nav>
       </header>
 
-      <section className="v2-hero">
-        <div className="v2-hero-inner">
-          <motion.div
-            animate={{ opacity: 1, y: 0 }}
-            className="v2-identity"
-            initial={playEntrance ? { opacity: 0, y: 12 } : false}
-            transition={{ delay: 0.45, duration: 0.6, ease: entranceEase }}
-          >
-            <p>成斌 / 空间设计师</p>
-            <p>SPATIAL DESIGNER</p>
-          </motion.div>
-          <div className="v2-hero-title-mask">
-            <motion.h1
-              animate={{ letterSpacing: '-0.058em' }}
-              initial={
-                playEntrance
-                  ? {
-                      letterSpacing: '-0.12em',
-                    }
-                  : false
-              }
-              transition={{ duration: 1.05, ease: entranceEase }}
-            >
-              <motion.span
-                animate={{ y: 0 }}
-                className="v2-hero-word"
-                initial={playEntrance ? { y: 120 } : false}
-                transition={{ duration: 1.02, ease: entranceEase }}
-              >
-                EVAN
-              </motion.span>
-              <span className="v2-hero-space"> </span>
-              <motion.span
-                animate={{ y: 0 }}
-                className="v2-hero-word"
-                initial={playEntrance ? { y: 140 } : false}
-                transition={{ delay: 0.08, duration: 1.02, ease: entranceEase }}
-              >
-                CHENG
-              </motion.span>
-            </motion.h1>
-          </div>
-          <div className="v2-hero-bottom">
-            <motion.span
-              aria-hidden="true"
-              className="v2-hero-rule"
-              initial={playEntrance ? { scaleX: 0 } : false}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 0.6, duration: 0.9, ease: entranceEase }}
-            />
-            <motion.p
-              animate={{ opacity: 1, y: 0 }}
-              initial={playEntrance ? { opacity: 0, y: 12 } : false}
-              transition={{ delay: 0.65, duration: 0.6, ease: entranceEase }}
-            >
-              关注空间、品牌与人的关系，以材质、光影与空间秩序，
-              <br />
-              将品牌语言转化为真实可感知的空间体验。
-            </motion.p>
-            <motion.p
-              animate={{ opacity: 1, y: 0 }}
-              initial={playEntrance ? { opacity: 0, y: 12 } : false}
-              transition={{ delay: 0.75, duration: 0.58, ease: entranceEase }}
-            >
-              SPACE / BRAND / EXPERIENCE
-            </motion.p>
-            <motion.a
-              animate={{ opacity: 1, y: 0 }}
-              href="#intro"
-              initial={playEntrance ? { opacity: 0, y: 12 } : false}
-              transition={{ delay: 0.85, duration: 0.58, ease: entranceEase }}
-            >
-              SCROLL TO EXPLORE ↓
-              <span>向下探索</span>
-            </motion.a>
-          </div>
-        </div>
-      </section>
+      <PortfolioParallaxHero playEntrance={playEntrance} />
 
       <section className="v2-intro" id="intro">
         <Reveal className="v2-intro-grid">
